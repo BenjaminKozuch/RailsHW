@@ -21,7 +21,14 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  arr.each { |i|  arr.each { |j| return true if i+j==n unless (arr.index(i)==arr.index(j))}}
+
+    
+
+
+ 
+ 
+  false
 end
 
 # Part 2
@@ -45,6 +52,13 @@ class BookInStock
 end
 
 
-puts max_2_sum [1,2,3,4,5,6,9,46,2,3]
-puts max_2_sum [5]
-puts max_2_sum([1,-2,-3,-4,-5])
+#puts max_2_sum [1,2,3,4,5,6,9,46,2,3]
+#puts max_2_sum [5]
+#puts max_2_sum([1,-2,-3,-4,-5])
+
+ sum_to_n?([1,2,3,4,5,6,7,8,9],18)
+
+
+
+
+
