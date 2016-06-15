@@ -26,15 +26,34 @@ def sum_to_n? arr, n
 end
 
 
-
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, "+name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  # !("aeiouAEIOU".split(//).include? s[0]) &&  s[0].downcase.between?("a","z") 
+
+  allLetters = ("a".."z").to_a.concat(("A".."Z").to_a)
+  
+  
+  if (s[0] != "") && (allLetters.include? s[0]) then
+   
+    if ("aeiouAEIOU".split(//).include? s[0]) then
+    
+      return false   
+
+    else
+
+      return true
+   
+    end
+
+  end
+
+  return false
+
 end
 
 def binary_multiple_of_4? s
@@ -52,9 +71,9 @@ end
 #puts max_2_sum [5]
 #puts max_2_sum([1,-2,-3,-4,-5])
 
- sum_to_n?([1,2,3,4,5,6,7,8,9],18)
+ #sum_to_n?([1,2,3,4,5,6,7,8,9],18)
 
 
 
 
-
+puts starts_with_consonant? "v"
