@@ -1,6 +1,7 @@
 # When done, submit this entire file to the autograder.
 
 # Part 1
+ 
 
 def sum arr
   sum=0 
@@ -8,28 +9,23 @@ def sum arr
   sum
 end
 
+
 def max_2_sum arr
- 
   arr.push(0,0) if arr.empty?
   arr.push(0)   if arr.length==1
- 
   max1 = arr.max
   arr.delete_at(arr.find_index(arr.max))
   max2 = arr.max
   max1+max2
-
 end
+
 
 def sum_to_n? arr, n
-  arr.each { |i|  arr.each { |j| return true if i+j==n unless (arr.index(i)==arr.index(j))}}
-
-    
-
-
- 
- 
+  arr.each { |i|  arr.each { |j| return true if i+j==n unless  arr.index(i)==arr.index(j)  } }
   false
 end
+
+
 
 # Part 2
 
