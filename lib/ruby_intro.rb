@@ -33,21 +33,14 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # !("aeiouAEIOU".split(//).include? s[0]) &&  s[0].downcase.between?("a","z") 
-
   allLetters = ("a".."z").to_a.concat(("A".."Z").to_a)
-  
   
   if (s[0] != "") && (allLetters.include? s[0]) then
    
     if ("aeiouAEIOU".split(//).include? s[0]) then
-    
       return false   
-
     else
-
       return true
-   
     end
 
   end
@@ -63,17 +56,31 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+
+  attr_accessor :isbn
+  attr_accessor :price
+
+  def initialize(isbn, price)
+      raise ArgumentError.new("Cant be blank")         if isbn  == ""
+      raise ArgumentError.new("Cant be Zero or Less")  if price <= 0
+      @price = price
+      @isbn = isbn
+  end
+
+  def price_as_string
+   return format("$%.2f",@price)
+  end
+
 end
 
 
-#puts max_2_sum [1,2,3,4,5,6,9,46,2,3]
-#puts max_2_sum [5]
-#puts max_2_sum([1,-2,-3,-4,-5])
-
- #sum_to_n?([1,2,3,4,5,6,7,8,9],18)
 
 
 
 
-puts starts_with_consonant? "v"
+
+
+
+
+
+
